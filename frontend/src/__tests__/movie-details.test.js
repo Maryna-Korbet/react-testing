@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import MovieDetails from '../components/movie-details';
 
 const selectedMovie = {
@@ -11,8 +11,15 @@ const selectedMovie = {
 }
 
 describe('MovieDetals component', () => {
+
     test("Should match a snapshot", () => {
-        const { container } = render(<MovieDetails movie={selectedMovie}/>);
+        const { container } = render(<MovieDetails movie={selectedMovie} />);
         expect(container).toMatchSnapshot();
-    })
-})
+    });
+
+    test("Should display title an descrition", () => {
+        render(<MovieDetails movie={selectedMovie} />);
+        expect(screen.getByText(selectedMovie.title)).toBeTruthy();
+        expect(screen.getByText(selectedMovie.description)).toBeTruthy();
+    });
+});
