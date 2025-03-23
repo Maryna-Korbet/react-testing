@@ -47,11 +47,11 @@ function MovieDetails(props){
         <div>
           <h1>{mov.title}</h1>
           <p>{mov.description}</p>
-          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 0 ? 'orange':''}/>
-          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 1 ? 'orange':''} />
-          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 2 ? 'orange':''} />
-          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 3 ? 'orange':''} />
-          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 4 ? 'orange':''} />
+          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 0 ? 'orange':''} data-testid="star"/>
+          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 1 ? 'orange':''} data-testid="star"/>
+          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 2 ? 'orange':''} data-testid="star"/>
+          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 3 ? 'orange':''} data-testid="star"/>
+          <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 4 ? 'orange':''} data-testid="star"/>
           ({mov.no_of_ratings})
           <div className="rate-container">
             <h2>Rate it</h2>
